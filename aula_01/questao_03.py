@@ -15,8 +15,7 @@ background_color = img_main[0, 0]
 
 for i in range(rows):
 	for j in range(cols):
-		sets = set(background_color == img_out[i, j])
-		if len(sets) <= 1 and sets == {True}:
+		if set(background_color == img_out[i, j]) == {True}:
 			img_out[i, j] = img_background[i, j]
 
 plt.figure('InMain')
