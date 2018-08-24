@@ -15,9 +15,7 @@ y = round(cols / 2) - n
 
 for i in range(2 * n):
 	for j in range(2 * n):
-		img_out[x + i, y + j, 0] = 0
-		img_out[x + i, y + j, 1] = 0
-		img_out[x + i, y + j, 2] = 0
+		img_out[x + i, y + j] = [0, 0, 0]
 
 plt.figure('In')
 io.imshow(img)

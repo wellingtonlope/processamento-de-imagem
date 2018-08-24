@@ -13,10 +13,13 @@ rows, cols, dim = img_main.shape
 
 background_color = img_main[0, 0]
 
+x = round(img_background.shape[0] / 2) - round(img_main.shape[0] / 2)
+y = round(img_background.shape[1] / 2) - round(img_main.shape[1] / 2)
+
 for i in range(rows):
 	for j in range(cols):
 		if set(background_color == img_out[i, j]) == {True}:
-			img_out[i, j] = img_background[i, j]
+			img_out[i, j] = img_background[i + x, j + y]
 
 plt.figure('InMain')
 io.imshow(img_main)
