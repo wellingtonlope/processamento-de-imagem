@@ -1,12 +1,11 @@
 import matplotlib.pyplot as plt
 from skimage import io
 
-path = '../imagens/'
 filename_main = 'USF4_Logo.bmp'
 filename_background = 'vingadores.jpg'
 
-img_main = io.imread(path + filename_main)
-img_background = io.imread(path + filename_background)
+img_main = io.imread(filename_main)
+img_background = io.imread(filename_background)
 img_out = img_main.copy()
 
 rows, cols, dim = img_main.shape
@@ -17,9 +16,9 @@ x = round(img_background.shape[0] / 2) - round(img_main.shape[0] / 2)
 y = round(img_background.shape[1] / 2) - round(img_main.shape[1] / 2)
 
 for i in range(rows):
-	for j in range(cols):
-		if set(background_color == img_out[i, j]) == {True}:
-			img_out[i, j] = img_background[i + x, j + y]
+    for j in range(cols):
+        if set(background_color == img_out[i, j]) == {True}:
+            img_out[i, j] = img_background[i + x, j + y]
 
 plt.figure('InMain')
 io.imshow(img_main)

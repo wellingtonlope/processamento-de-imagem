@@ -1,10 +1,9 @@
 import matplotlib.pyplot as plt
 from skimage import io
 
-path = '../imagens/'
 filename = 'vingadores.jpg'
 
-img = io.imread(path + filename)
+img = io.imread(filename)
 img_out = img.copy()
 
 rows, cols, dim = img.shape
